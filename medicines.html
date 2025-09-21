@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="Images/medcine3.jpg" />
+    <link rel="stylesheet" href="medicines.css" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Medicines</title>
+  </head>
+  <body>
+    <div class="items-section">
+      <nav class="navbar">
+        <div class="title">
+          <img src="Images/piece.png" />
+          <h2 style="margin-left: 5px">Farming Tools</h2>
+        </div>
+      </nav>
+
+      <div class="items-container">
+        <div class="items-cards product">
+          <img
+            src="Products/Medicines/composte.png"
+            class="item-img"
+            id="paracetamol"
+          />
+          <div class="item-info">
+            <h2>Hand Spade</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹800/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('paracetamol').src,'Hand Spade','800/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Medicines/farminghoe(kundali).png"
+            class="item-img"
+            id="nasal"
+          />
+          <div class="item-info">
+            <h2>Kundali(heo)</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹500/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('nasal').src,'SprayKundali(heo)','₹500/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Medicines/gardeningspade.png"
+            class="item-img"
+            id="CoughSyrup"
+          />
+          <div class="item-info">
+            <h2>Gardening Spade</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹400/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('CoughSyrup').src,'Gardening Spade','₹400/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Medicines/stornehandsicklecutter.png"
+            class="item-img"
+            id="digene"
+          />
+          <div class="item-info">
+            <h2>Hand Sickle Cutter</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹250/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('digene').src,'Hand Sickle Cutter','₹250/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Medicines/headgeshears.jpg"
+            class="item-img"
+            id="pain"
+          />
+          <div class="item-info">
+            <h2>Headge Shear</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹400/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('pain').src,'Headge Shear','₹400/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img src="Products/Medicines/crowbar.webp" class="item-img" id="ors" />
+          <div class="item-info">
+            <h2>Crow Bar</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹600/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('ors').src,'Crow Bar','₹600/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function addToCart(image, name, price) {
+        // Retrieve cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Add the new item to the cart array
+        cartItems.push({ image, name, price });
+
+        // Save the updated cart items back to localStorage
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        alert(name + " has been added to your cart!");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="Images/homecare3.jpg" />
+    <link rel="stylesheet" href="homeCare.css" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Home Care</title>
+  </head>
+  <body>
+    <div class="items-section">
+      <nav class="navbar">
+        <div class="title">
+          <img src="Images/fertilizers.png" />
+          <h2 style="margin-left: 5px">Fertilizers</h2>
+        </div>
+      </nav>
+
+      <div class="items-container">
+        <div class="items-cards product">
+          <img
+            src="Products/Home Care/urea.jpg"
+            class="item-img"
+            id="handwash"
+          />
+          <div class="item-info">
+            <h2>Urea</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹110/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('handwash').src, 'Urea', '₹110/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Home Care/organicfertilizer.jpg"
+            class="item-img"
+            id="sponges"
+          />
+          <div class="item-info">
+            <h2>Organic Fertilizer</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹60/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('sponges').src, 'Organic Fertilizer', '₹60/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Home Care/bugpesticide.jpg"
+            class="item-img"
+            id="bucket"
+          />
+          <div class="item-info">
+            <h2>Bug Pesticide</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹150/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('bucket').src, 'Bug Pesticide', '₹150/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img src="Products/Home Care/evergreen.webp" class="item-img" id="mop" />
+          <div class="item-info">
+            <h2>Ever Green Fertilizer</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹200/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('mop').src, 'Ever Green Fertilizer', '₹200/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Home Care/flowerfertilizer.webp"
+            class="item-img"
+            id="tissues"
+          />
+          <div class="item-info">
+            <h2>Flower Fertilizer</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹50/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('tissues').src, 'Flower Fertilizer', '₹50/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Home Care/liquidfertilizer.jpg"
+            class="item-img"
+            id="dustpan"
+          />
+          <div class="item-info">
+            <h2>Liquid Fertilizer</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹70/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('dustpan').src, 'Liquid Fertilizer', '₹70/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function addToCart(image, name, price) {
+        // Retrieve cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Add the new item to the cart array
+        cartItems.push({ image, name, price });
+
+        // Save the updated cart items back to localStorage
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        alert(name + " has been added to your cart!");
+      }
+    </script>
+  </body>
+</html>

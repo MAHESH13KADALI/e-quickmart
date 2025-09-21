@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/webp" href="Images/vegandfruit.webp" />
+    <link rel="stylesheet" href="Fruits.css" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Fruits and Veggies</title>
+  </head>
+  <body>
+    <div class="items-section">
+      <nav class="navbar">
+        <div class="title">
+          <img src="Images/vegandfruit.webp" />
+          <h2 style="margin-left: 5px">Fruits and Veggies</h2>
+        </div>
+      </nav>
+
+      <div class="items-container">
+        <div class="items-cards product">
+          <img
+            src="Products/fruits and veg/apple.webp"
+            class="item-img"
+            id="apple"
+          />
+          <div class="item-info">
+            <h2>4-Apples</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹200/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('apple').src, '4-Apples', '₹200/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/fruits and veg/watermelon.webp"
+            class="item-img"
+            id="melon"
+          />
+          <div class="item-info">
+            <h2>1-Watermelon</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹100/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('melon').src, '1-Watermelon', '₹100/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/fruits and veg/mango.webp"
+            class="item-img"
+            id="mango"
+          />
+          <div class="item-info">
+            <h2>3-Mangoes</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹200/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('mango').src, '3-Mangoes', '₹200/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/fruits and veg/onion.jpg"
+            class="item-img"
+            id="onion"
+          />
+          <div class="item-info">
+            <h2>1KG-onions</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹170/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('onion').src, '1KG-Onions', '₹170/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/fruits and veg/tomato.jpg"
+            class="item-img"
+            id="tome"
+          />
+          <div class="item-info">
+            <h2>1KG-Tomatoes</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹150/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('tome').src, '1KG-Tomatoes', '₹150/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/fruits and veg/potatoes.webp"
+            class="item-img"
+            id="potatoes"
+          />
+          <div class="item-info">
+            <h2>Potatoes</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹190/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('potatoes').src, 'Potatoes', '₹190/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function addToCart(image, name, price) {
+        // Retrieve cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Add the new item to the cart array
+        cartItems.push({ image, name, price });
+
+        // Save the updated cart items back to localStorage
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        alert(name + " has been added to your cart!");
+      }
+    </script>
+  </body>
+</html>

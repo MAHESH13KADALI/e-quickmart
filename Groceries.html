@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Groceries.css" />
+    <link rel="icon" type="image/jpg" href="Images/Groceries.jpg" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_arrow_down"
+    />
+    <title>Groceries</title>
+  </head>
+  <body>
+    <div class="items-section">
+      <nav class="navbar">
+        <div class="title">
+          <img src="Images/Groceries.jpg" />
+          <h2 style="margin-left: 5px">Seeds & Grains</h2>
+        </div>
+      </nav>
+
+      <div class="items-container">
+        <div class="items-cards product">
+          <img
+            src="Products/Groceries/pumpkin.webp"
+            class="item-img"
+            id="turmeric"
+          />
+          <div class="item-info">
+            <h2>pumpkin Seeds</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹50/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('turmeric').src, 'pumpkin Seeds', '₹50/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Groceries/sumflower.webp"
+            class="item-img"
+            id="chilli"
+          />
+          <div class="item-info">
+            <h2>Sun Flower Seeds</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹200/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('chilli').src, 'Sun Flower Seeds', '₹200/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img src="Products/Groceries/chia.webp" class="item-img" id="suji" />
+          <div class="item-info">
+            <h2>Chia Seeds</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹100/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('suji').src, 'Chia Seeds', '₹100/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img src="Products/Groceries/barley1.jpg" class="item-img" id="Oil" />
+          <div class="item-info">
+            <h2>Barley Grains</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹250/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('Oil').src, 'Barley Grains', '₹250/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img src="Products/Groceries/wheat1.jpg" class="item-img" id="wheat" />
+          <div class="item-info">
+            <h2>Wheat Grains</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹120/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('wheat').src, 'Wheat Grains', '₹120/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+        <div class="items-cards product">
+          <img
+            src="Products/Groceries/dal1.jpg"
+            class="item-img"
+            id="rajma"
+          />
+          <div class="item-info">
+            <h2>Dal Grains</h2>
+            <div class="fav-price">
+              <div class="price"><p>₹180/-</p></div>
+            </div>
+            <button
+              class="cart-button"
+              onclick="addToCart(document.getElementById('rajma').src, 'Dal Grains', '₹180/-')"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function addToCart(image, name, price) {
+        // Retrieve cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Add the new item to the cart array
+        cartItems.push({ image, name, price });
+
+        // Save the updated cart items back to localStorage
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        alert(name + " has been added to your cart!");
+      }
+    </script>
+  </body>
+</html>
